@@ -1,0 +1,17 @@
+{
+	"name": "word-learning",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "parcel src/index.html",
+		"build": "parcel build src/index.html --public-url /word-learning/"
+	},
+	"dependencies": {
+		"gestalt": "^0.83.0",
+		"react": "^16.7.0-alpha.0",
+		"react-dom": "^16.7.0-alpha.0"
+	},
+	"devDependencies": {
+		"parcel-bundler": "^1.10.3"
+	}
+}
