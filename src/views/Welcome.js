@@ -11,7 +11,7 @@ const Welcome = ({setView}) => {
 		<Center>
 			<div style={{maxWidth: '800px'}}>
 				<Center>
-					<Title>Word Learning Reserach Study</Title>
+					<Title>Word Learning Research Study</Title>
 					<div>You will be presented with a number of trials each consisting of two pseudowords and two objects. Your goal is to correctly learn the association between a word and its corresponding object.</div>
 					<ul style={{marginBottom: '2.5rem'}}>
 						<li>There are 18 words and 18 objects.</li>
