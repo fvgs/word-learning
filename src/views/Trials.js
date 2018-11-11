@@ -8,7 +8,7 @@ import trials from '../../data/trials.json'
 const pairs = pseudowords.map(
 	(pseudoword, i) => ({
 		pseudoword,
-		image: images[i + 1],
+		image: images[i],
 	}),
 )
 
