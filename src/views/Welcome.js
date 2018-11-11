@@ -2,7 +2,6 @@ import React, {useCallback} from 'react'
 
 import Center from '../components/Center'
 import Title from '../components/Title'
-import Subtext from '../components/Subtext'
 import {Button} from 'gestalt'
 
 const Welcome = ({setView}) => {
@@ -13,7 +12,7 @@ const Welcome = ({setView}) => {
 			<div style={{maxWidth: '800px'}}>
 				<Center>
 					<Title>Word Learning Reserach Study</Title>
-					<Subtext>You will be presented with a number of trials each consisting of two pseudowords and two objects. Your goal is to correctly learn the association between a word and its corresponding object.</Subtext>
+					<div>You will be presented with a number of trials each consisting of two pseudowords and two objects. Your goal is to correctly learn the association between a word and its corresponding object.</div>
 					<ul style={{marginBottom: '2.5rem'}}>
 						<li>There are 18 words and 18 objects.</li>
 						<li>Each word corresonds to a single object.</li>
