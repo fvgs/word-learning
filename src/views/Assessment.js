@@ -29,7 +29,7 @@ const instructions = {
 	paddingBottom: '1rem',
 }
 
-const Assessment = ({setView}) => {
+const Assessment = ({setView, setResults}) => {
 	const [selectedWord, setSelectedWord] = useState(null)
 	const [selectedImage, setSelectedImage] = useState(null)
 	const [matches, setMatches] = useState([])
@@ -84,7 +84,15 @@ const Assessment = ({setView}) => {
 								}
 
 								if (selectedImage !== null) {
-									setMatches([...matches, {pseudoword: word, image: selectedImage}])
+									const newMatches = [...matches, {pseudoword: word, image: selectedImage}]
+
+									if (newMatches.length === words.length) {
+										setResults(newMatches)
+										setView('debrief')
+										return
+									}
+
+									setMatches(newMatches)
 									setSelectedImage(null)
 									return
 								}
@@ -122,7 +130,15 @@ const Assessment = ({setView}) => {
 							}
 
 							if (selectedWord !== null) {
-								setMatches([...matches, {pseudoword: selectedWord, image: index}])
+								const newMatches = [...matches, {pseudoword: selectedWord, image: index}]
+
+								if (newMatches.length === imgs.length) {
+									setResults(newMatches)
+									setView('debrief')
+									return
+								}
+
+								setMatches(newMatches)
 								setSelectedWord(null)
 								return
 							}
