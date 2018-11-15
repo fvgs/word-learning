@@ -3,7 +3,8 @@ import React, {useState} from 'react'
 import Trial from '../components/Trial'
 import pseudowords from '../../data/pseudowords.json'
 import images from '../../data/images/image*.jpg'
-import trials from '../../data/trials.json'
+import trialsCondition1 from '../../data/trialsCondition1.json'
+import trialsCondition2 from '../../data/trialsCondition2.json'
 
 const pairs = pseudowords.map(
 	(pseudoword, i) => ({
@@ -12,8 +13,15 @@ const pairs = pseudowords.map(
 	}),
 )
 
-const Trials = ({setView}) => {
+const getTrials = {
+	1: trialsCondition1,
+	2: trialsCondition2,
+}
+
+const Trials = ({condition, setView}) => {
 	const [trial, setTrial] = useState(0)
+
+	const trials = getTrials[condition]
 
 	const next = () => {
 		if (trial === trials.length - 1) {

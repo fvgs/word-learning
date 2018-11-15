@@ -1,0 +1,54 @@
+#! /usr/bin/env node
+
+const pseudowords = require('../data/pseudowords.json')
+
+const getRandomIndex = (counts, i) => {
+	const countEntries = [...counts.entries()]
+	const eligibleEntries = countEntries
+		.filter(([index, count]) => count < 6 && index !== i)
+	const index = Math.floor(Math.random() * eligibleEntries.length)
+	return eligibleEntries[index][0]
+}
+
+const shuffle = arr => {
+	for (let i = arr.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1))
+		;[arr[i], arr[j]] = [arr[j], arr[i]]
+	}
+	return arr
+}
+
+const gen = () => {
+	const counts = pseudowords.map(() => 0)
+	const trials = []
+
+	counts.forEach((count, i) => {
+		trials.push(
+			...Array.from(
+				{length: 6 - count},
+				() => {
+					const index = getRandomIndex(counts, i)
+					counts[index] += 1
+					return [i, index]
+				},
+			),
+		)
+		counts[i] = 6
+	})
+
+	for (let i = 0; i < 1e5; i++) {
+		shuffle(trials)
+	}
+
+	return trials
+}
+
+const main = () => {
+	try {
+		console.log(gen())
+	} catch {
+		main()
+	}
+}
+
+main()
