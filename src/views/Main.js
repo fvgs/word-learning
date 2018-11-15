@@ -5,6 +5,8 @@ import Trials from './Trials'
 import Assessment from './Assessment'
 import Debrief from './Debrief'
 
+const condition = Math.floor(Math.random() * 2) + 1
+
 const getView = {
 	welcome: Welcome,
 	trials: Trials,
@@ -18,7 +20,14 @@ const Main = () => {
 
 	const View = getView[view]
 
-	return <View setView={setView} results={results} setResults={setResults}/>
+	return (
+		<View
+			condition={condition}
+			setView={setView}
+			results={results}
+			setResults={setResults}
+		/>
+	)
 }
 
 export default Main
