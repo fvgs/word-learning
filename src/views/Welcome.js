@@ -25,6 +25,7 @@ const Welcome = ({setView}) => {
 						<li>Please do not take any notes during the trials.</li>
 						<li>Please focus on the task for the duration of the study (~5 min)</li>
 						<li>Please complete the word-object association assessment following the final trial as soon as the last trial has ended.</li>
+						<li>Please do not complete the study more than once.</li>
 					</ul>
 					<Button text="Begin" color="red" onClick={begin}/>
 				</Center>
