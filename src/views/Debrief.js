@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useMemo, useEffect} from 'react'
 import {Box} from 'gestalt'
 
 import pseudowords from '../../data/pseudowords.json'
 import Title from '../components/Title'
+
+const ENDPOINT = 'https://bb0qijdhsd.execute-api.us-east-2.amazonaws.com/airtable'
 
 const getNumCorrect = results => results.reduce(
 	(count, {pseudoword, image}) =>
@@ -21,8 +23,43 @@ const subtext = {
 	marginTop: '4rem',
 }
 
-const Debrief = ({results}) => {
-	const numCorrect = getNumCorrect(results)
+const retry = (fun, count) => {
+	const continuation = res => {
+		if (count > 0 && !res.ok) {
+			retry(fun, count - 1)
+		}
+	}
+
+	fun().then(continuation).catch(continuation)
+}
+
+const recordResults = (condition, numCorrect, objectPairings) => () =>
+	fetch(ENDPOINT, {
+		method: 'POST',
+		mode: 'cors',
+		headers: {'Content-Type': 'application/json'},
+		body: JSON.stringify({
+			condition,
+			score: numCorrect,
+			object_pairings: objectPairings,
+		}),
+	})
+
+const Debrief = ({condition, results}) => {
+	const numCorrect = useMemo(() => getNumCorrect(results), [results])
+
+	useEffect(
+		() => {
+			const objectPairings =
+				results
+					.sort((a, b) => parseInt(a.image) - parseInt(b.image))
+					.map(result => result.pseudoword)
+					.join()
+
+			retry(recordResults(condition, numCorrect, objectPairings), 3)
+		},
+		[],
+	)
 
 	return (
 		<Box
