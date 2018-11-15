@@ -1,0 +1,23 @@
+#! /usr/bin/env node
+
+const trialsCondition1 = require('../data/trialsCondition1.json')
+const trialsCondition2 = require('../data/trialsCondition2.json')
+
+const check = trials => {
+	const counts = trials.reduce(
+		(obj, [a, b]) => ({
+			...obj,
+			[a]: (obj[a] || 0) + 1,
+			[b]: (obj[b] || 0) + 1,
+		}),
+		{},
+	)
+	const invalidIndexes =
+		Object.entries(counts)
+			.filter(([, count]) => count !== 6)
+
+	return invalidIndexes.length === 0 || invalidIndexes
+}
+
+console.log('Check trialsCondition1:', check(trialsCondition1))
+console.log('Check trialsCondition2:', check(trialsCondition2))
