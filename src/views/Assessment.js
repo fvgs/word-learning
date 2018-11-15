@@ -25,8 +25,7 @@ const instructions = {
 	fontWeight: 600,
 	display: 'flex',
 	justifyContent: 'center',
-	paddingTop: '1.8rem',
-	paddingBottom: '1rem',
+	padding: '1.8rem 1.5rem 1rem',
 }
 
 const Assessment = ({setView, setResults}) => {
@@ -70,7 +69,6 @@ const Assessment = ({setView, setResults}) => {
 					paddingX={10}
 					paddingY={4}
 					maxWidth={600}
-					minWidth={450}
 					display="flex"
 					justifyContent="center"
 					flex="grow"
@@ -117,7 +115,6 @@ const Assessment = ({setView, setResults}) => {
 					paddingX={10}
 					paddingY={4}
 					maxWidth={600}
-					minWidth={450}
 					display="flex"
 					justifyContent="center"
 					flex="grow"

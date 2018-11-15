@@ -6,9 +6,9 @@ const styles = {
 }
 
 const TrialImages = ({images}) =>
-	<div>
+	<div style={{textAlign: 'center'}}>
 		{images.map(
-			image => <img style={styles} key={image} src={image}/>,
+			image => <img style={styles} className="trial-image" key={image} src={image}/>,
 		)}
 	</div>
 

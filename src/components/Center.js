@@ -1,7 +1,7 @@
 import React from 'react'
 
 const styles = {
-	height: '100%',
+	minHeight: '100%',
 	display: 'flex',
 	justifyContent: 'center',
 	alignItems: 'center',

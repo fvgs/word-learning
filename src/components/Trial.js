@@ -29,9 +29,13 @@ const Trial = ({pairs, next}) => {
 
 	return (
 		<Center>
-			<TrialWords words={words}/>
-			<TrialImages images={images}/>
-			<Timer/>
+			<div style={{padding: '1.5rem'}}>
+				<Center>
+					<TrialWords words={words}/>
+					<TrialImages images={images}/>
+					<Timer/>
+				</Center>
+			</div>
 		</Center>
 	)
 }

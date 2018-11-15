@@ -4,12 +4,17 @@ import Center from '../components/Center'
 import Title from '../components/Title'
 import {Button} from 'gestalt'
 
+const styles = {
+	maxWidth: '800px',
+	padding: '1.5rem',
+}
+
 const Welcome = ({setView}) => {
 	const begin = useCallback(() => setView('trials'), [setView])
 
 	return (
 		<Center>
-			<div style={{maxWidth: '800px'}}>
+			<div style={styles}>
 				<Center>
 					<Title>Word Learning Research Study</Title>
 					<div>You will be presented with a number of trials each consisting of two pseudowords and two objects. Your goal is to correctly learn the association between a word and its corresponding object.</div>

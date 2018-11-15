@@ -4,6 +4,7 @@ const styles = {
 	fontSize: '3rem',
 	fontWeight: 600,
 	marginBottom: '2.5rem',
+	textAlign: 'center',
 }
 
 const Title = props =>

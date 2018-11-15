@@ -67,7 +67,8 @@ const Debrief = ({condition, results}) => {
 			justifyContent="center"
 			alignItems="center"
 			direction="column"
-			height="100vh"
+			minHeight="100%"
+			padding={8}
 		>
 			<Title>Thank you for completing the study</Title>
 			<div style={body}>
