@@ -9,6 +9,7 @@ const baseStyles = {
 	alignItems: 'center',
 	borderRadius: '100px',
 	cursor: 'pointer',
+	WebkitTapHighlightColor: 'transparent',
 }
 
 const selectedStyles = {

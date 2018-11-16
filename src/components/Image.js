@@ -7,6 +7,7 @@ const baseStyles = {
 	margin: '7px',
 	cursor: 'pointer',
 	backgroundSize: 'contain',
+	WebkitTapHighlightColor: 'transparent',
 }
 
 const matchedStyles = {
