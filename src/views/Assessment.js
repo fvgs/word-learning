@@ -56,7 +56,7 @@ const Assessment = ({setView, setResults}) => {
 	return (
 		<Fragment>
 			<div style={instructions}>
-				<span style={{maxWidth: '720px'}}>Select pairs of words and objects you believe correspond to each other until all words and objects are matched.</span>
+				<span style={{maxWidth: '850px'}}>Select pairs of words and objects you believe correspond to each other until all words and objects are matched. Once matched, a pair cannot be changed.</span>
 			</div>
 			<Box
 				display="flex"
