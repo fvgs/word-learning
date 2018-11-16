@@ -13,11 +13,11 @@ const baseStyles = {
 }
 
 const selectedStyles = {
-	backgroundColor: 'rgba(0, 250, 154, 0.5)',
+	backgroundColor: 'rgba(40, 217, 255, 0.5)',
 }
 
 const matchedStyles = {
-	backgroundColor: 'rgba(140, 217, 255, 0.5)',
+	backgroundColor: 'rgba(124, 242, 242, 0.5)',
 	cursor: 'auto',
 }
 

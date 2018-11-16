@@ -16,11 +16,11 @@ const matchedStyles = {
 
 const getBackgroundImage = (image, selected, matched) => {
 	if (selected) {
-		return `linear-gradient(rgba(0, 250, 154, 0.5), rgba(0, 250, 154, 0.5)), url(${image})`
+		return `linear-gradient(rgba(40, 217, 255, 0.5), rgba(40, 217, 255, 0.5)), url(${image})`
 	}
 
 	if (matched) {
-		return `linear-gradient(rgba(140, 217, 255, 0.5), rgba(140, 217, 255, 0.5)), url(${image})`
+		return `linear-gradient(rgba(124, 242, 242, 0.5), rgba(124, 242, 242, 0.5)), url(${image})`
 	}
 
 	return `url(${image})`
